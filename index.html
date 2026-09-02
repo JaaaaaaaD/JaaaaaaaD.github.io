@@ -3,229 +3,656 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta
+    name="description"
+    content="Jiayi Li - computer vision, multimodal learning, medical imaging, embodied intelligence, and research systems."
+  />
   <title>Jiayi Li</title>
   <style>
     :root {
-      --text: #1f1f1f;
-      --muted: #666;
-      --line: #d9d9d9;
-      --bg: #ffffff;
+      --bg: #f7f5ef;
+      --surface: #ffffff;
+      --surface-soft: #f0f4f2;
+      --ink: #1d2326;
+      --muted: #657071;
+      --line: #d8ddd8;
+      --accent: #1f6f64;
+      --accent-strong: #173f5f;
+      --warm: #a66f2f;
+      --shadow: 0 22px 70px rgba(29, 35, 38, 0.1);
+    }
+
+    * {
+      box-sizing: border-box;
     }
 
     html {
+      scroll-behavior: smooth;
       background: var(--bg);
     }
 
     body {
       margin: 0;
-      font-family: Georgia, "Times New Roman", serif;
-      color: var(--text);
-      background: var(--bg);
-      line-height: 1.8;
+      color: var(--ink);
+      background:
+        linear-gradient(180deg, rgba(255, 255, 255, 0.72), rgba(247, 245, 239, 0.96) 360px),
+        var(--bg);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.65;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    a:hover {
+      color: var(--accent);
     }
 
     .page {
-      max-width: 820px;
-      margin: 64px auto 80px;
-      padding: 0 28px;
+      width: min(1120px, calc(100% - 40px));
+      margin: 0 auto;
+      padding: 32px 0 64px;
     }
 
-    header {
-      margin-bottom: 44px;
+    .topbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      padding: 12px 0 36px;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .brand {
+      font-weight: 700;
+      color: var(--ink);
+    }
+
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 18px;
+      justify-content: flex-end;
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 320px;
+      gap: 54px;
+      align-items: center;
+      padding: 48px 0 58px;
+    }
+
+    .eyebrow {
+      margin: 0 0 14px;
+      color: var(--accent);
+      font-size: 0.86rem;
+      font-weight: 800;
+      text-transform: uppercase;
     }
 
     h1 {
+      max-width: 780px;
       margin: 0;
-      font-size: 2.4rem;
-      font-weight: 600;
-      letter-spacing: 0.2px;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(2.65rem, 7vw, 5.5rem);
+      line-height: 0.96;
+      font-weight: 700;
     }
 
-    .subtitle {
-      margin-top: 10px;
-      font-size: 1.02rem;
-      color: var(--muted);
+    .lead {
+      max-width: 720px;
+      margin: 24px 0 0;
+      color: #3f494b;
+      font-size: clamp(1.05rem, 1.7vw, 1.28rem);
     }
 
-    .contact {
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 30px;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 44px;
+      padding: 0 18px;
+      border: 1px solid var(--line);
+      background: var(--surface);
+      color: var(--ink);
+      font-size: 0.95rem;
+      font-weight: 700;
+      border-radius: 8px;
+    }
+
+    .button.primary {
+      border-color: var(--accent);
+      background: var(--accent);
+      color: #fff;
+    }
+
+    .portrait-wrap {
+      justify-self: end;
+      width: min(320px, 100%);
+    }
+
+    .portrait {
+      display: block;
+      width: 100%;
+      aspect-ratio: 4 / 5;
+      object-fit: cover;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      box-shadow: var(--shadow);
+      background: var(--surface);
+    }
+
+    .portrait-caption {
       margin-top: 14px;
-      font-size: 0.98rem;
       color: var(--muted);
+      font-size: 0.94rem;
     }
 
-    .contact a {
-      color: inherit;
-      text-decoration: none;
-      border-bottom: 1px solid transparent;
+    .quick-facts {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 12px;
+      margin: 10px 0 56px;
     }
 
-    .contact a:hover {
-      border-bottom-color: var(--muted);
+    .fact {
+      min-height: 116px;
+      padding: 18px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: rgba(255, 255, 255, 0.72);
     }
 
-    .contact-list {
-      margin: 8px 0 0 0;
-      padding-left: 20px;
+    .fact strong {
+      display: block;
+      margin-bottom: 8px;
+      font-size: 1.45rem;
+      line-height: 1.1;
+      color: var(--accent-strong);
     }
 
-    .contact-list li {
-      margin: 3px 0;
+    .fact span {
+      color: var(--muted);
+      font-size: 0.95rem;
     }
 
     section {
-      margin-top: 34px;
+      padding: 38px 0;
+      border-top: 1px solid var(--line);
+    }
+
+    .section-head {
+      display: grid;
+      grid-template-columns: 220px minmax(0, 1fr);
+      gap: 32px;
+      align-items: start;
+      margin-bottom: 24px;
     }
 
     h2 {
-      margin: 0 0 12px 0;
-      font-size: 1.06rem;
-      font-weight: 600;
-      letter-spacing: 0.4px;
-      text-transform: uppercase;
-      color: #222;
-      border-bottom: 1px solid var(--line);
-      padding-bottom: 6px;
+      margin: 0;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(1.45rem, 3vw, 2.1rem);
+      line-height: 1.1;
     }
 
-    p {
-      margin: 10px 0;
-      font-size: 1rem;
-    }
-
-    .entry {
-      margin: 18px 0 22px;
-    }
-
-    .entry-title {
-      font-weight: 600;
-    }
-
-    .entry-meta {
+    .section-intro {
+      margin: 0;
+      max-width: 760px;
       color: var(--muted);
+      font-size: 1.02rem;
+    }
+
+    .research-grid,
+    .work-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .item {
+      padding: 22px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--surface);
+    }
+
+    .item h3 {
+      margin: 0;
+      font-size: 1.08rem;
+      line-height: 1.35;
+    }
+
+    .meta {
+      margin: 7px 0 0;
+      color: var(--warm);
+      font-size: 0.92rem;
+      font-weight: 700;
+    }
+
+    .item p {
+      margin: 13px 0 0;
+      color: #485254;
       font-size: 0.97rem;
-      margin-top: 2px;
     }
 
-    ul {
-      margin: 10px 0 0 18px;
-      padding: 0;
+    .publication-list,
+    .timeline {
+      display: grid;
+      gap: 14px;
     }
 
-    li {
-      margin: 8px 0;
+    .publication,
+    .timeline-row {
+      display: grid;
+      grid-template-columns: 140px minmax(0, 1fr);
+      gap: 24px;
+      padding: 20px 0;
+      border-bottom: 1px solid var(--line);
     }
 
-    .note {
+    .publication:last-child,
+    .timeline-row:last-child {
+      border-bottom: 0;
+    }
+
+    .year {
+      color: var(--accent-strong);
+      font-weight: 800;
+    }
+
+    .publication h3,
+    .timeline-row h3 {
+      margin: 0;
+      font-size: 1.06rem;
+      line-height: 1.4;
+    }
+
+    .publication p,
+    .timeline-row p {
+      margin: 8px 0 0;
       color: var(--muted);
-      font-size: 0.96rem;
-      margin-top: 36px;
+    }
+
+    .thoughts {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 18px;
+      padding: 30px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--surface-soft);
+    }
+
+    .thoughts p {
+      max-width: 790px;
+      margin: 0;
+      color: #3f494b;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(1.16rem, 2vw, 1.55rem);
+      line-height: 1.55;
+    }
+
+    .thought-note {
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .skills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 4px;
+    }
+
+    .tag {
+      padding: 7px 11px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.72);
+      color: #3f494b;
+      font-size: 0.92rem;
+    }
+
+    footer {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      padding-top: 28px;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    @media (max-width: 880px) {
+      .hero,
+      .section-head {
+        grid-template-columns: 1fr;
+      }
+
+      .portrait-wrap {
+        justify-self: start;
+        max-width: 260px;
+      }
+
+      .quick-facts,
+      .research-grid,
+      .work-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 620px) {
+      .page {
+        width: min(100% - 28px, 1120px);
+        padding-top: 20px;
+      }
+
+      .topbar,
+      footer {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      nav {
+        justify-content: flex-start;
+        gap: 12px;
+      }
+
+      .hero {
+        gap: 30px;
+        padding-top: 24px;
+      }
+
+      .quick-facts,
+      .research-grid,
+      .work-grid,
+      .publication,
+      .timeline-row {
+        grid-template-columns: 1fr;
+      }
+
+      .publication,
+      .timeline-row {
+        gap: 8px;
+      }
+
+      .thoughts {
+        padding: 22px;
+      }
     }
   </style>
 </head>
 <body>
   <main class="page">
-    <header>
-      <h1>Jiayi Li</h1>
-      <div class="subtitle">Undergraduate Researcher in Software Engineering</div>
-      <div class="contact">
-        Beijing University of Technology · Beijing, China
-        <ul class="contact-list">
-          <li>Personal Email: <a href="mailto:lijiayi12jad@gmail.com">lijiayi12jad@gmail.com</a></li>
-          <li>School Email: <a href="mailto:jaaaaaaa_d@emails.bjut.edu.cn">jaaaaaaa_d@emails.bjut.edu.cn</a></li>
-        </ul>
+    <div class="topbar">
+      <a class="brand" href="#">Jiayi Li</a>
+      <nav aria-label="Primary navigation">
+        <a href="#research">Research</a>
+        <a href="#publications">Publications</a>
+        <a href="#work">Work</a>
+        <a href="#thoughts">Thoughts</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+
+    <header class="hero">
+      <div>
+        <p class="eyebrow">Computer Vision · Multimodal Learning · Research Systems</p>
+        <h1>Building visual intelligence systems that stay close to real data.</h1>
+        <p class="lead">
+          I am an undergraduate researcher in Software Engineering at Beijing University of Technology.
+          My work spans computer vision, multimodal learning, medical imaging, agricultural vision,
+          embodied intelligence, and AR/XR interaction.
+        </p>
+        <div class="hero-actions">
+          <a class="button primary" href="mailto:lijiayi12jad@gmail.com">Email Me</a>
+          <a class="button" href="https://github.com/JaaaaaaaD">GitHub</a>
+          <a class="button" href="#publications">Publications</a>
+        </div>
+      </div>
+      <div class="portrait-wrap">
+        <img class="portrait" src="assets/profile.jpg" alt="Portrait of Jiayi Li" />
+        <div class="portrait-caption">
+          Beijing, China · B.Eng. Software Engineering, 2023-present
+        </div>
       </div>
     </header>
 
-    <section>
-      <h2>About</h2>
-      <p>
-        I am an undergraduate student in Software Engineering at Beijing University of Technology.
-        My academic interests lie in medical image analysis, point cloud processing, machine learning,
-        and deep learning. I am particularly interested in research problems that connect computational
-        methods with practical applications in imaging, perception, and intelligent systems.
-      </p>
-    </section>
+    <div class="quick-facts" aria-label="Profile highlights">
+      <div class="fact">
+        <strong>2</strong>
+        <span>accepted first-author research papers</span>
+      </div>
+      <div class="fact">
+        <strong>CV</strong>
+        <span>computer vision, segmentation, and visual grounding</span>
+      </div>
+      <div class="fact">
+        <strong>EEG</strong>
+        <span>multimodal localization with cognitive signals</span>
+      </div>
+      <div class="fact">
+        <strong>XR</strong>
+        <span>vision-side analysis for immersive interaction</span>
+      </div>
+    </div>
 
-    <section>
-      <h2>Research Interests</h2>
-      <p>
-        Medical Image Analysis · Point Cloud Registration · Machine Learning · Deep Learning · Computer Vision
-      </p>
-    </section>
-
-    <section>
-      <h2>Education</h2>
-      <div class="entry">
-        <div class="entry-title">Beijing University of Technology</div>
-        <div class="entry-meta">B.Eng. in Software Engineering (Experimental Class), 2023–present</div>
-        <p>
-          Current academic training focuses on medical image analysis, point cloud methods,
-          machine learning, and deep learning.
+    <section id="research">
+      <div class="section-head">
+        <h2>Research Direction</h2>
+        <p class="section-intro">
+          I am interested in vision problems where the data is not clean, centered, or neatly labeled:
+          occluded field images, anisotropic medical volumes, EEG-guided perception, and real-time
+          interaction systems. I prefer research that starts from a difficult setting and then builds
+          the tools, data, and models needed to make the setting measurable.
         </p>
+      </div>
+      <div class="research-grid">
+        <article class="item">
+          <h3>Instance Segmentation Under Occlusion</h3>
+          <p class="meta">Agricultural vision · dataset construction</p>
+          <p>
+            First-person maize segmentation pushed me toward instance ownership, ignore regions,
+            and annotation tools that can handle disconnected visible parts instead of assuming one
+            clean object mask.
+          </p>
+        </article>
+        <article class="item">
+          <h3>Medical Image Analysis</h3>
+          <p class="meta">CT markers · lesion segmentation · 3D geometry</p>
+          <p>
+            My medical imaging work combines practical detection pipelines, point-cloud visualization,
+            and segmentation-model comparison under limited and irregular clinical data.
+          </p>
+        </article>
+        <article class="item">
+          <h3>Multimodal Visual Grounding</h3>
+          <p class="meta">EEG · object regions · long-sequence signals</p>
+          <p>
+            I am exploring whether noisy, low-bandwidth EEG signals can provide useful cognitive cues
+            for region-level visual localization beyond ordinary classification.
+          </p>
+        </article>
+        <article class="item">
+          <h3>Embodied and XR Interaction</h3>
+          <p class="meta">AR/XR · perception · latency-sensitive systems</p>
+          <p>
+            I also care about vision components that operate inside interactive systems, where spatial
+            tracking, perception cues, and latency constraints shape what an algorithm can actually do.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section id="publications">
+      <div class="section-head">
+        <h2>Publications</h2>
+        <p class="section-intro">
+          Recent work focuses on benchmarks and robust perception pipelines for difficult real-world data.
+        </p>
+      </div>
+      <div class="publication-list">
+        <article class="publication">
+          <div class="year">BMVC 2026</div>
+          <div>
+            <h3>EgoMaize: A First-Person Maize Instance Segmentation Benchmark under Severe Field Occlusion</h3>
+            <p>Independent first author. Project page, dataset, and code are planned for release.</p>
+          </div>
+        </article>
+        <article class="publication">
+          <div class="year">HDIS 2025</div>
+          <div>
+            <h3>AniSphere: Robust Spherical Marker Detection in Highly Anisotropic Clinical CT</h3>
+            <p>First author. Accepted and EI indexed.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="work">
+      <div class="section-head">
+        <h2>Selected Work</h2>
+        <p class="section-intro">
+          I like building research infrastructure around hard annotation and perception problems:
+          not only models, but also datasets, tools, validation protocols, and reproducible pipelines.
+        </p>
+      </div>
+      <div class="work-grid">
+        <article class="item">
+          <h3>General-purpose Data Annotation Platform</h3>
+          <p class="meta">Independent developer · 2026</p>
+          <p>
+            A visual annotation platform for complex instance segmentation, with one-instance-multiple-polygons
+            editing, SAM-based pre-annotation, fine-tuning support, quality control, and batch COCO I/O.
+          </p>
+        </article>
+        <article class="item">
+          <h3>EEG-Vision Multimodal Localization</h3>
+          <p class="meta">Research assistant · 2026-present</p>
+          <p>
+            A pipeline linking continuous EEG processing, visual-region feature extraction, representation
+            design, and multimodal alignment for region-level visual grounding.
+          </p>
+        </article>
+        <article class="item">
+          <h3>AniSphere CT Marker Detection</h3>
+          <p class="meta">Medical image analysis · 2025</p>
+          <p>
+            A slice-wise Hough and DBSCAN-based marker reconstruction workflow extended to CT point-cloud
+            visualization and registration with PyQt5 and Open3D.
+          </p>
+        </article>
+        <article class="item">
+          <h3>Yumi Chaoren Fieldwork App</h3>
+          <p class="meta">Flutter · local-first data management · 2026</p>
+          <p>
+            A mobile tool for corn-breeding fieldwork, replacing fragmented paper records with structured
+            local-first storage, synchronization, recovery, and operational data management.
+          </p>
+        </article>
       </div>
     </section>
 
     <section>
-      <h2>Research Experience</h2>
-
-      <div class="entry">
-        <div class="entry-title">Robotic Arm Error Compensation</div>
-        <div class="entry-meta">Research Project · Feb 2025 – Apr 2025</div>
-        <p>
-          Investigated error factors in a UE5-based six-axis robotic arm system, constructed a dataset,
-          and performed learning-based compensation. The project involved data preprocessing, fine-tuning
-          ResNet18, and introducing ensemble strategies for improved prediction performance.
+      <div class="section-head">
+        <h2>Experience</h2>
+        <p class="section-intro">
+          Research and engineering experiences that shaped my current direction.
         </p>
       </div>
+      <div class="timeline">
+        <article class="timeline-row">
+          <div class="year">2026</div>
+          <div>
+            <h3>Algorithm Intern, Beijing Lingyu Intelligent Control Technology Co., Ltd. (NOLO VR)</h3>
+            <p>Computer vision and XR interaction, with attention to tracking cues and low-latency perception pipelines.</p>
+          </div>
+        </article>
+        <article class="timeline-row">
+          <div class="year">2025</div>
+          <div>
+            <h3>Intern, Institute of Automation, Chinese Academy of Sciences</h3>
+            <p>Technical organization, literature review, and planning support for an intelligent-agent research project.</p>
+          </div>
+        </article>
+        <article class="timeline-row">
+          <div class="year">2023-present</div>
+          <div>
+            <h3>Beijing University of Technology</h3>
+            <p>B.Eng. in Software Engineering, Experimental Class. ACM selection team captain.</p>
+          </div>
+        </article>
+      </div>
+    </section>
 
-      <div class="entry">
-        <div class="entry-title">Pelvic Point Cloud Registration for Medical CT Images</div>
-        <div class="entry-meta">Research Project · May 2025 – Jul 2025</div>
-        <p>
-          Developed a visualization panel using PyQt5 and Open3D for registration of pre-, intra-, and
-          postoperative pelvic CT point clouds. The workflow combined point cloud cleaning, manual keypoint
-          selection, PCA-based alignment, and ICP registration.
+    <section id="thoughts">
+      <div class="section-head">
+        <h2>Thoughts</h2>
+        <p class="section-intro">
+          A reserved space for a short personal note about research taste, long-term questions, or the kind
+          of systems I want to build.
         </p>
       </div>
-
-      <div class="entry">
-        <div class="entry-title">Medical CT Image Metal Marker Detection</div>
-        <div class="entry-meta">Research Project · Sep 2025 – Nov 2025</div>
+      <div class="thoughts">
         <p>
-          Conducted image processing and marker retrieval on intraoperative CT data using SimpleITK,
-          nibabel, Hough transform, and DBSCAN to identify metal sphere markers and recover their spatial
-          relationships within the image volume.
+          This paragraph is intentionally left open for a more personal statement.
         </p>
-      </div>
-
-      <div class="entry">
-        <div class="entry-title">Medical Image Segmentation Model Optimization</div>
-        <div class="entry-meta">Research Project · Nov 2025 – Jan 2026</div>
-        <p>
-          Performed fine-tuning and comparative experiments on brain lesion segmentation models,
-          with a focus on model optimization for medical image recognition and segmentation tasks.
-        </p>
+        <div class="thought-note">
+          It can later become a concise reflection on how I think about research, tools, intelligence, and reality.
+        </div>
       </div>
     </section>
 
     <section>
-      <h2>Technical Background</h2>
-      <p>
-        Python, PyTorch, Open3D, SimpleITK, nibabel, NumPy, pandas, Matplotlib, C, C++, Flutter,
-        SQLite, PostgreSQL
-      </p>
+      <div class="section-head">
+        <h2>Technical Ground</h2>
+        <p class="section-intro">
+          I work mostly in Python and PyTorch, with practical experience across annotation systems,
+          medical imaging, 3D processing, mobile development, and dataset engineering.
+        </p>
+      </div>
+      <div class="skills">
+        <span class="tag">Python</span>
+        <span class="tag">PyTorch</span>
+        <span class="tag">OpenCV</span>
+        <span class="tag">SAM</span>
+        <span class="tag">YOLOv8</span>
+        <span class="tag">Mask R-CNN</span>
+        <span class="tag">Mask2Former</span>
+        <span class="tag">Open3D</span>
+        <span class="tag">SimpleITK</span>
+        <span class="tag">EEG time-series</span>
+        <span class="tag">PyQt5</span>
+        <span class="tag">Flutter</span>
+        <span class="tag">SQL</span>
+        <span class="tag">Docker</span>
+        <span class="tag">COCO format</span>
+      </div>
     </section>
 
-    <section>
-      <h2>Languages</h2>
-      <p>
-        Chinese (Native); English (TOEFL 102, CET-6 560)
-      </p>
-    </section>
-
-    <p class="note">
-      This page serves as a brief academic profile for professional and research identification.
-    </p>
+    <footer id="contact">
+      <div>
+        <strong>Jiayi Li</strong><br />
+        Beijing University of Technology · Beijing, China
+      </div>
+      <div>
+        <a href="mailto:lijiayi12jad@gmail.com">lijiayi12jad@gmail.com</a><br />
+        <a href="mailto:jaaaaaaa_d@emails.bjut.edu.cn">jaaaaaaa_d@emails.bjut.edu.cn</a><br />
+        <a href="https://github.com/JaaaaaaaD">github.com/JaaaaaaaD</a>
+      </div>
+    </footer>
   </main>
 </body>
 </html>
