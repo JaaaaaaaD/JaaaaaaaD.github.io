@@ -5,20 +5,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta
     name="description"
-    content="Jiayi Li - true unified intelligence, brain-inspired intelligence, computer vision, and multimodal learning."
+    content="Jiayi Li - undergraduate researcher interested in true unified intelligence, brain-inspired intelligence, computer vision, and multimodal learning."
   />
-  <title>Jiayi Li - 真正的、统一的智能</title>
+  <title>Jiayi Li</title>
   <style>
     :root {
-      --bg: #ffffff;
-      --surface: #ffffff;
-      --surface-soft: #f7f7f7;
-      --ink: #1f1f1f;
+      --text: #202124;
       --muted: #5f6368;
-      --line: #dddddd;
-      --accent: #1f4e79;
-      --accent-strong: #1f4e79;
-      --warm: #555555;
+      --line: #dadce0;
+      --link: #0645ad;
+      --bg: #ffffff;
+      --soft: #f8f9fa;
     }
 
     * {
@@ -26,538 +23,329 @@
     }
 
     html {
-      scroll-behavior: smooth;
       background: var(--bg);
     }
 
     body {
       margin: 0;
-      color: var(--ink);
+      color: var(--text);
       background: var(--bg);
-      font-family: Georgia, "Times New Roman", serif;
-      line-height: 1.7;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 16px;
+      line-height: 1.62;
     }
 
     a {
-      color: inherit;
+      color: var(--link);
       text-decoration: none;
     }
 
     a:hover {
-      color: var(--accent);
+      text-decoration: underline;
     }
 
     .page {
-      width: min(920px, calc(100% - 40px));
+      width: min(940px, calc(100% - 36px));
       margin: 0 auto;
-      padding: 28px 0 60px;
+      padding: 34px 0 56px;
     }
 
-    .topbar {
+    header {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 190px;
+      gap: 32px;
+      align-items: start;
+      padding-bottom: 28px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    h1 {
+      margin: 0;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 2.45rem;
+      line-height: 1.1;
+      font-weight: 500;
+    }
+
+    .subtitle {
+      margin: 8px 0 0;
+      color: var(--muted);
+      font-size: 1rem;
+    }
+
+    .main-title {
+      margin: 22px 0 0;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 1.65rem;
+      line-height: 1.25;
+      font-weight: 500;
+    }
+
+    .intro {
+      max-width: 660px;
+      margin: 14px 0 0;
+    }
+
+    .links {
       display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 24px;
-      padding: 8px 0 30px;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 16px;
       color: var(--muted);
       font-size: 0.95rem;
     }
 
-    .brand {
-      font-weight: 700;
-      color: var(--ink);
-      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    .portrait {
+      width: 190px;
+      max-width: 100%;
+      aspect-ratio: 4 / 5;
+      object-fit: cover;
+      border: 1px solid var(--line);
+      background: var(--soft);
     }
 
     nav {
       display: flex;
       flex-wrap: wrap;
-      gap: 18px;
-      justify-content: flex-end;
-      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-    }
-
-    .hero {
-      display: grid;
-      grid-template-columns: minmax(0, 1fr) 240px;
-      gap: 36px;
-      align-items: center;
-      padding: 28px 0 42px;
-    }
-
-    .eyebrow {
-      margin: 0 0 14px;
-      color: var(--accent);
-      font-size: 0.86rem;
-      font-weight: 800;
-      text-transform: uppercase;
-    }
-
-    h1 {
-      max-width: 780px;
-      margin: 0;
-      font-family: Georgia, "Times New Roman", serif;
-      font-size: clamp(2.1rem, 4.8vw, 3.35rem);
-      line-height: 1.12;
-      font-weight: 700;
-    }
-
-    .lead {
-      max-width: 720px;
-      margin: 20px 0 0;
-      color: #3f494b;
-      font-size: 1.05rem;
-    }
-
-    .hero-actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-      margin-top: 24px;
-    }
-
-    .button {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 44px;
-      padding: 0 18px;
-      border: 1px solid var(--line);
-      background: var(--surface);
-      color: var(--ink);
+      gap: 16px;
+      margin: 18px 0 0;
       font-size: 0.95rem;
-      font-weight: 700;
-      border-radius: 8px;
-      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-    }
-
-    .button.primary {
-      border-color: var(--accent);
-      background: var(--accent);
-      color: #fff;
-    }
-
-    .portrait-wrap {
-      justify-self: end;
-      width: min(240px, 100%);
-    }
-
-    .portrait {
-      display: block;
-      width: 100%;
-      aspect-ratio: 4 / 5;
-      object-fit: cover;
-      border: 1px solid var(--line);
-      border-radius: 4px;
-      background: var(--surface);
-    }
-
-    .portrait-caption {
-      margin-top: 14px;
-      color: var(--muted);
-      font-size: 0.94rem;
     }
 
     section {
-      padding: 32px 0;
-      border-top: 1px solid var(--line);
-    }
-
-    .section-head {
-      display: grid;
-      grid-template-columns: 190px minmax(0, 1fr);
-      gap: 28px;
-      align-items: start;
-      margin-bottom: 24px;
-    }
-
-    h2 {
-      margin: 0;
-      font-family: Georgia, "Times New Roman", serif;
-      font-size: clamp(1.28rem, 2.5vw, 1.75rem);
-      line-height: 1.1;
-    }
-
-    .section-intro {
-      margin: 0;
-      max-width: 760px;
-      color: var(--muted);
-      font-size: 1rem;
-    }
-
-    .research-grid,
-    .work-grid {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 16px;
-    }
-
-    .item {
-      padding: 22px;
-      border: 1px solid var(--line);
-      border-radius: 4px;
-      background: var(--surface);
-    }
-
-    .item h3 {
-      margin: 0;
-      font-size: 1.08rem;
-      line-height: 1.35;
-    }
-
-    .meta {
-      margin: 7px 0 0;
-      color: var(--warm);
-      font-size: 0.92rem;
-      font-weight: 600;
-    }
-
-    .item p {
-      margin: 13px 0 0;
-      color: #485254;
-      font-size: 0.97rem;
-    }
-
-    .publication-list,
-    .timeline {
-      display: grid;
-      gap: 14px;
-    }
-
-    .publication,
-    .timeline-row {
-      display: grid;
-      grid-template-columns: 140px minmax(0, 1fr);
-      gap: 24px;
-      padding: 20px 0;
+      padding: 28px 0;
       border-bottom: 1px solid var(--line);
     }
 
-    .publication:last-child,
-    .timeline-row:last-child {
-      border-bottom: 0;
-    }
-
-    .year {
-      color: var(--accent-strong);
-      font-weight: 800;
-    }
-
-    .publication h3,
-    .timeline-row h3 {
-      margin: 0;
-      font-size: 1.06rem;
-      line-height: 1.4;
-    }
-
-    .publication p,
-    .timeline-row p {
-      margin: 8px 0 0;
-      color: var(--muted);
-    }
-
-    .ideas {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 18px;
-      padding: 30px;
-      border: 1px solid var(--line);
-      border-radius: 4px;
-      background: var(--surface-soft);
-    }
-
-    .ideas p {
-      max-width: 790px;
-      margin: 0;
-      color: #3f494b;
+    h2 {
+      margin: 0 0 14px;
       font-family: Georgia, "Times New Roman", serif;
-      font-size: 1.12rem;
-      line-height: 1.55;
+      font-size: 1.45rem;
+      font-weight: 500;
     }
 
-    .idea-note {
+    p {
+      margin: 10px 0;
+    }
+
+    ul {
+      margin: 10px 0 0 20px;
+      padding: 0;
+    }
+
+    li {
+      margin: 7px 0;
+    }
+
+    .entry {
+      margin: 18px 0 0;
+    }
+
+    .entry:first-of-type {
+      margin-top: 0;
+    }
+
+    .entry-title {
+      font-weight: 700;
+    }
+
+    .entry-meta {
       color: var(--muted);
       font-size: 0.95rem;
+    }
+
+    .publication {
+      margin: 14px 0 0;
+      padding-left: 18px;
+      text-indent: -18px;
+    }
+
+    .idea-box {
+      margin-top: 12px;
+      padding: 18px 20px;
+      border-left: 3px solid var(--line);
+      background: var(--soft);
     }
 
     footer {
-      display: flex;
-      justify-content: space-between;
-      gap: 20px;
-      padding-top: 28px;
-      border-top: 1px solid var(--line);
+      padding-top: 26px;
       color: var(--muted);
       font-size: 0.95rem;
     }
 
-    @media (max-width: 880px) {
-      .hero,
-      .section-head {
+    @media (max-width: 720px) {
+      header {
         grid-template-columns: 1fr;
       }
 
-      .portrait-wrap {
-        justify-self: start;
-        max-width: 260px;
+      .portrait {
+        width: 170px;
       }
 
-      .research-grid,
-      .work-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-      }
-    }
-
-    @media (max-width: 620px) {
-      .page {
-        width: min(100% - 28px, 1120px);
-        padding-top: 20px;
+      h1 {
+        font-size: 2.1rem;
       }
 
-      .topbar,
-      footer {
-        align-items: flex-start;
-        flex-direction: column;
-      }
-
-      nav {
-        justify-content: flex-start;
-        gap: 12px;
-      }
-
-      .hero {
-        gap: 30px;
-        padding-top: 24px;
-      }
-
-      .research-grid,
-      .work-grid,
-      .publication,
-      .timeline-row {
-        grid-template-columns: 1fr;
-      }
-
-      .publication,
-      .timeline-row {
-        gap: 8px;
-      }
-
-      .ideas {
-        padding: 22px;
+      .main-title {
+        font-size: 1.45rem;
       }
     }
   </style>
 </head>
 <body>
   <main class="page">
-    <div class="topbar">
-      <a class="brand" href="#">Jiayi Li</a>
-      <nav aria-label="Primary navigation">
-        <a href="#research">Research</a>
-        <a href="#publications">Publications</a>
-        <a href="#work">Work</a>
-        <a href="#ideas">Ideas</a>
-        <a href="#contact">Contact</a>
-      </nav>
-    </div>
-
-    <header class="hero">
+    <header>
       <div>
-        <p class="eyebrow">Jiayi Li · Undergraduate Researcher</p>
-        <h1>真正的、统一的智能</h1>
-        <p class="lead">
-          My long-term direction is true, unified intelligence. I currently approach this question through
-          computer vision, multimodal learning, brain-inspired intelligence, embodied intelligence, and
-          research systems that connect models with real experimental workflows.
+        <h1>Jiayi Li</h1>
+        <p class="subtitle">
+          Undergraduate Student, Software Engineering<br />
+          Beijing University of Technology
         </p>
-        <div class="hero-actions">
-          <a class="button primary" href="mailto:lijiayi12jad@gmail.com">Email Me</a>
-          <a class="button" href="https://github.com/JaaaaaaaD">GitHub</a>
-          <a class="button" href="#publications">Publications</a>
+
+        <p class="main-title">True, Unified Intelligence</p>
+        <p class="intro">
+          I am interested in building and understanding intelligence as a unified capability, where
+          perception, reasoning, learning, action, and adaptation are studied as parts of the same system.
+          My current entry points are computer vision, multimodal learning, brain-inspired intelligence,
+          embodied intelligence, and research-oriented software systems.
+        </p>
+
+        <div class="links">
+          <a href="mailto:lijiayi12jad@gmail.com">lijiayi12jad@gmail.com</a>
+          <span>|</span>
+          <a href="mailto:jaaaaaaa_d@emails.bjut.edu.cn">jaaaaaaa_d@emails.bjut.edu.cn</a>
+          <span>|</span>
+          <a href="https://github.com/JaaaaaaaD">GitHub</a>
         </div>
+
+        <nav aria-label="Page navigation">
+          <a href="#about">About</a>
+          <a href="#interests">Research Interests</a>
+          <a href="#publications">Publications</a>
+          <a href="#projects">Projects</a>
+          <a href="#experience">Experience</a>
+          <a href="#ideas">Ideas</a>
+        </nav>
       </div>
-      <div class="portrait-wrap">
-        <img class="portrait" src="assets/profile.jpg" alt="Portrait of Jiayi Li" />
-        <div class="portrait-caption">
-          Beijing, China · B.Eng. Software Engineering, 2023-present
-        </div>
-      </div>
+
+      <img class="portrait" src="assets/profile.jpg" alt="Portrait of Jiayi Li" />
     </header>
 
-    <section id="research">
-      <div class="section-head">
-        <h2>Research Direction</h2>
-        <p class="section-intro">
-          I am interested in intelligence as an integrated capability: perception, cognition, action,
-          learning, and adaptation should eventually be understood within one coherent framework.
-          My current work uses computer vision and multimodal learning as concrete entry points toward
-          this broader question.
-        </p>
-      </div>
-      <div class="research-grid">
-        <article class="item">
-          <h3>Instance Segmentation Under Occlusion</h3>
-          <p class="meta">Agricultural vision · dataset construction</p>
-          <p>
-            My work on first-person maize instance segmentation focuses on benchmark construction,
-            annotation protocols, instance ownership, and model evaluation for agricultural vision.
-          </p>
-        </article>
-        <article class="item">
-          <h3>Medical Image Analysis</h3>
-          <p class="meta">CT markers · lesion segmentation · 3D geometry</p>
-          <p>
-            My medical imaging work combines practical detection pipelines, point-cloud visualization,
-            and segmentation-model comparison for CT analysis and lesion segmentation.
-          </p>
-        </article>
-        <article class="item">
-          <h3>Multimodal Visual Grounding</h3>
-          <p class="meta">EEG · object regions · long-sequence signals</p>
-          <p>
-            I am exploring EEG-guided visual localization as a multimodal grounding problem that links
-            cognitive signals with object-level visual regions.
-          </p>
-        </article>
-        <article class="item">
-          <h3>Brain-inspired and Embodied Intelligence</h3>
-          <p class="meta">unified intelligence · AR/XR · perception-action systems</p>
-          <p>
-            I am drawn to intelligence as an integrated system, where perception, memory, grounding,
-            action, and adaptation are not separate endpoints but parts of one coherent mechanism.
-          </p>
-        </article>
-      </div>
+    <section id="about">
+      <h2>About</h2>
+      <p>
+        I am an undergraduate student in Software Engineering at Beijing University of Technology.
+        I have worked on computer vision, medical image analysis, agricultural vision, EEG-based
+        multimodal localization, and XR interaction. I am especially interested in research problems
+        that connect algorithm design with usable datasets, tools, and experimental systems.
+      </p>
+    </section>
+
+    <section id="interests">
+      <h2>Research Interests</h2>
+      <ul>
+        <li>True and unified intelligence</li>
+        <li>Brain-inspired intelligence and embodied intelligence</li>
+        <li>Computer vision and instance segmentation</li>
+        <li>Multimodal learning and visual grounding</li>
+        <li>Medical image analysis and 3D vision</li>
+      </ul>
     </section>
 
     <section id="publications">
-      <div class="section-head">
-        <h2>Publications</h2>
-        <p class="section-intro">
-          Selected publications and accepted work.
+      <h2>Publications</h2>
+      <p class="publication">
+        <strong>J. Li</strong>, et al. "EgoMaize: A First-Person Maize Instance Segmentation Benchmark
+        under Severe Field Occlusion." <em>BMVC 2026</em>, accepted. Independent first author.
+      </p>
+      <p class="publication">
+        <strong>J. Li</strong>, et al. "AniSphere: Robust Spherical Marker Detection in Highly
+        Anisotropic Clinical CT." <em>HDIS 2025</em>, accepted; EI indexed. First author.
+      </p>
+    </section>
+
+    <section id="projects">
+      <h2>Projects</h2>
+      <div class="entry">
+        <div class="entry-title">General-purpose Data Annotation Platform</div>
+        <div class="entry-meta">Independent Developer, 2026</div>
+        <p>
+          Built a visual annotation platform for instance segmentation, with multi-polygon instance
+          editing, SAM-based pre-annotation, fine-tuning support, quality control, and batch COCO I/O.
         </p>
       </div>
-      <div class="publication-list">
-        <article class="publication">
-          <div class="year">BMVC 2026</div>
-          <div>
-            <h3>EgoMaize: A First-Person Maize Instance Segmentation Benchmark under Severe Field Occlusion</h3>
-            <p>Independent first author. Project page, dataset, and code are planned for release.</p>
-          </div>
-        </article>
-        <article class="publication">
-          <div class="year">HDIS 2025</div>
-          <div>
-            <h3>AniSphere: Robust Spherical Marker Detection in Highly Anisotropic Clinical CT</h3>
-            <p>First author. Accepted and EI indexed.</p>
-          </div>
-        </article>
+
+      <div class="entry">
+        <div class="entry-title">EgoMaize Benchmark</div>
+        <div class="entry-meta">Computer Vision and Dataset Construction, 2026</div>
+        <p>
+          Led dataset collection, annotation protocol design, annotation tool development, quality control,
+          baseline benchmarking, and manuscript writing for a first-person maize instance segmentation benchmark.
+        </p>
+      </div>
+
+      <div class="entry">
+        <div class="entry-title">AniSphere CT Marker Detection</div>
+        <div class="entry-meta">Medical Image Analysis, 2025</div>
+        <p>
+          Developed a marker-detection and reconstruction workflow for anisotropic clinical CT data,
+          with extensions to point-cloud visualization and registration.
+        </p>
+      </div>
+
+      <div class="entry">
+        <div class="entry-title">Yumi Chaoren Fieldwork App</div>
+        <div class="entry-meta">Mobile Application and Field Data Management, 2026</div>
+        <p>
+          Developed a mobile app for corn-breeding fieldwork with local-first storage, synchronization,
+          recovery, and structured data management.
+        </p>
       </div>
     </section>
 
-    <section id="work">
-      <div class="section-head">
-        <h2>Selected Work</h2>
-        <p class="section-intro">
-          Selected research and engineering work.
+    <section id="experience">
+      <h2>Experience</h2>
+      <div class="entry">
+        <div class="entry-title">EEG-Vision Multimodal Localization</div>
+        <div class="entry-meta">Research Assistant, 2026-present</div>
+        <p>
+          Working on EEG-guided visual localization, connecting EEG time-series processing with
+          region-level visual features and multimodal alignment.
         </p>
       </div>
-      <div class="work-grid">
-        <article class="item">
-          <h3>General-purpose Data Annotation Platform</h3>
-          <p class="meta">Independent developer · 2026</p>
-          <p>
-            A visual annotation platform for complex instance segmentation, with one-instance-multiple-polygons
-            editing, SAM-based pre-annotation, fine-tuning support, quality control, and batch COCO I/O.
-          </p>
-        </article>
-        <article class="item">
-          <h3>EEG-Vision Multimodal Localization</h3>
-          <p class="meta">Research assistant · 2026-present</p>
-          <p>
-            A pipeline linking continuous EEG processing, visual-region feature extraction, representation
-            design, and multimodal alignment for region-level visual grounding.
-          </p>
-        </article>
-        <article class="item">
-          <h3>AniSphere CT Marker Detection</h3>
-          <p class="meta">Medical image analysis · 2025</p>
-          <p>
-            A slice-wise Hough and DBSCAN-based marker reconstruction workflow extended to CT point-cloud
-            visualization and registration with PyQt5 and Open3D.
-          </p>
-        </article>
-        <article class="item">
-          <h3>Yumi Chaoren Fieldwork App</h3>
-          <p class="meta">Flutter · local-first data management · 2026</p>
-          <p>
-            A mobile tool for corn-breeding fieldwork, replacing fragmented paper records with structured
-            local-first storage, synchronization, recovery, and operational data management.
-          </p>
-        </article>
-      </div>
-    </section>
 
-    <section>
-      <div class="section-head">
-        <h2>Experience</h2>
-        <p class="section-intro">
-          Research and engineering experiences.
+      <div class="entry">
+        <div class="entry-title">Beijing Lingyu Intelligent Control Technology Co., Ltd. (NOLO VR)</div>
+        <div class="entry-meta">Algorithm Intern, 2026</div>
+        <p>
+          Worked on computer-vision components for XR interaction, including visual tracking cues,
+          interaction-state understanding, and latency-sensitive perception pipelines.
         </p>
       </div>
-      <div class="timeline">
-        <article class="timeline-row">
-          <div class="year">2026</div>
-          <div>
-            <h3>Algorithm Intern, Beijing Lingyu Intelligent Control Technology Co., Ltd. (NOLO VR)</h3>
-            <p>Computer vision and XR interaction, with attention to tracking cues and low-latency perception pipelines.</p>
-          </div>
-        </article>
-        <article class="timeline-row">
-          <div class="year">2025</div>
-          <div>
-            <h3>Intern, Institute of Automation, Chinese Academy of Sciences</h3>
-            <p>Technical organization, literature review, and planning support for an intelligent-agent research project.</p>
-          </div>
-        </article>
-        <article class="timeline-row">
-          <div class="year">2023-present</div>
-          <div>
-            <h3>Beijing University of Technology</h3>
-            <p>B.Eng. in Software Engineering, Experimental Class. ACM selection team captain.</p>
-          </div>
-        </article>
+
+      <div class="entry">
+        <div class="entry-title">Institute of Automation, Chinese Academy of Sciences</div>
+        <div class="entry-meta">Intern, 2025</div>
+        <p>
+          Contributed to literature review, technical organization, and early research planning for
+          an intelligent-agent research project.
+        </p>
       </div>
     </section>
 
     <section id="ideas">
-      <div class="section-head">
-        <h2>Ideas</h2>
-        <p class="section-intro">
-          A short note on the long-term question that pulls my research interests together.
-        </p>
-      </div>
-      <div class="ideas">
+      <h2>Ideas</h2>
+      <div class="idea-box">
         <p>
           My ideal is true, unified intelligence. I am interested in systems that can integrate
           perception, reasoning, learning, action, and adaptation as parts of the same whole.
           This is why brain-inspired intelligence is one of my core interests.
         </p>
-        <div class="idea-note">
-          This space will keep evolving as my research questions become sharper.
-        </div>
       </div>
     </section>
 
-    <footer id="contact">
-      <div>
-        <strong>Jiayi Li</strong><br />
-        Beijing University of Technology · Beijing, China
-      </div>
-      <div>
-        <a href="mailto:lijiayi12jad@gmail.com">lijiayi12jad@gmail.com</a><br />
-        <a href="mailto:jaaaaaaa_d@emails.bjut.edu.cn">jaaaaaaa_d@emails.bjut.edu.cn</a><br />
-        <a href="https://github.com/JaaaaaaaD">github.com/JaaaaaaaD</a>
-      </div>
+    <footer>
+      Last updated: September 2026.
     </footer>
   </main>
 </body>
