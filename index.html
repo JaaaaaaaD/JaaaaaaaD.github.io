@@ -5,21 +5,20 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta
     name="description"
-    content="Jiayi Li - computer vision, multimodal learning, brain-inspired intelligence, embodied intelligence, and research systems."
+    content="Jiayi Li - true unified intelligence, brain-inspired intelligence, computer vision, and multimodal learning."
   />
-  <title>Jiayi Li</title>
+  <title>Jiayi Li - 真正的、统一的智能</title>
   <style>
     :root {
-      --bg: #f7f5ef;
+      --bg: #ffffff;
       --surface: #ffffff;
-      --surface-soft: #f0f4f2;
-      --ink: #1d2326;
-      --muted: #657071;
-      --line: #d8ddd8;
-      --accent: #1f6f64;
-      --accent-strong: #173f5f;
-      --warm: #a66f2f;
-      --shadow: 0 22px 70px rgba(29, 35, 38, 0.1);
+      --surface-soft: #f7f7f7;
+      --ink: #1f1f1f;
+      --muted: #5f6368;
+      --line: #dddddd;
+      --accent: #1f4e79;
+      --accent-strong: #1f4e79;
+      --warm: #555555;
     }
 
     * {
@@ -34,11 +33,9 @@
     body {
       margin: 0;
       color: var(--ink);
-      background:
-        linear-gradient(180deg, rgba(255, 255, 255, 0.72), rgba(247, 245, 239, 0.96) 360px),
-        var(--bg);
-      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      line-height: 1.65;
+      background: var(--bg);
+      font-family: Georgia, "Times New Roman", serif;
+      line-height: 1.7;
     }
 
     a {
@@ -51,9 +48,9 @@
     }
 
     .page {
-      width: min(1120px, calc(100% - 40px));
+      width: min(920px, calc(100% - 40px));
       margin: 0 auto;
-      padding: 32px 0 64px;
+      padding: 28px 0 60px;
     }
 
     .topbar {
@@ -61,7 +58,7 @@
       align-items: center;
       justify-content: space-between;
       gap: 24px;
-      padding: 12px 0 36px;
+      padding: 8px 0 30px;
       color: var(--muted);
       font-size: 0.95rem;
     }
@@ -69,6 +66,7 @@
     .brand {
       font-weight: 700;
       color: var(--ink);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
     }
 
     nav {
@@ -76,14 +74,15 @@
       flex-wrap: wrap;
       gap: 18px;
       justify-content: flex-end;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
     }
 
     .hero {
       display: grid;
-      grid-template-columns: minmax(0, 1fr) 320px;
-      gap: 54px;
+      grid-template-columns: minmax(0, 1fr) 240px;
+      gap: 36px;
       align-items: center;
-      padding: 48px 0 58px;
+      padding: 28px 0 42px;
     }
 
     .eyebrow {
@@ -98,23 +97,23 @@
       max-width: 780px;
       margin: 0;
       font-family: Georgia, "Times New Roman", serif;
-      font-size: clamp(2.65rem, 7vw, 5.5rem);
-      line-height: 0.96;
+      font-size: clamp(2.1rem, 4.8vw, 3.35rem);
+      line-height: 1.12;
       font-weight: 700;
     }
 
     .lead {
       max-width: 720px;
-      margin: 24px 0 0;
+      margin: 20px 0 0;
       color: #3f494b;
-      font-size: clamp(1.05rem, 1.7vw, 1.28rem);
+      font-size: 1.05rem;
     }
 
     .hero-actions {
       display: flex;
       flex-wrap: wrap;
       gap: 12px;
-      margin-top: 30px;
+      margin-top: 24px;
     }
 
     .button {
@@ -129,6 +128,7 @@
       font-size: 0.95rem;
       font-weight: 700;
       border-radius: 8px;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
     }
 
     .button.primary {
@@ -139,7 +139,7 @@
 
     .portrait-wrap {
       justify-self: end;
-      width: min(320px, 100%);
+      width: min(240px, 100%);
     }
 
     .portrait {
@@ -148,8 +148,7 @@
       aspect-ratio: 4 / 5;
       object-fit: cover;
       border: 1px solid var(--line);
-      border-radius: 8px;
-      box-shadow: var(--shadow);
+      border-radius: 4px;
       background: var(--surface);
     }
 
@@ -159,43 +158,15 @@
       font-size: 0.94rem;
     }
 
-    .quick-facts {
-      display: grid;
-      grid-template-columns: repeat(4, minmax(0, 1fr));
-      gap: 12px;
-      margin: 10px 0 56px;
-    }
-
-    .fact {
-      min-height: 116px;
-      padding: 18px;
-      border: 1px solid var(--line);
-      border-radius: 8px;
-      background: rgba(255, 255, 255, 0.72);
-    }
-
-    .fact strong {
-      display: block;
-      margin-bottom: 8px;
-      font-size: 1.45rem;
-      line-height: 1.1;
-      color: var(--accent-strong);
-    }
-
-    .fact span {
-      color: var(--muted);
-      font-size: 0.95rem;
-    }
-
     section {
-      padding: 38px 0;
+      padding: 32px 0;
       border-top: 1px solid var(--line);
     }
 
     .section-head {
       display: grid;
-      grid-template-columns: 220px minmax(0, 1fr);
-      gap: 32px;
+      grid-template-columns: 190px minmax(0, 1fr);
+      gap: 28px;
       align-items: start;
       margin-bottom: 24px;
     }
@@ -203,7 +174,7 @@
     h2 {
       margin: 0;
       font-family: Georgia, "Times New Roman", serif;
-      font-size: clamp(1.45rem, 3vw, 2.1rem);
+      font-size: clamp(1.28rem, 2.5vw, 1.75rem);
       line-height: 1.1;
     }
 
@@ -211,7 +182,7 @@
       margin: 0;
       max-width: 760px;
       color: var(--muted);
-      font-size: 1.02rem;
+      font-size: 1rem;
     }
 
     .research-grid,
@@ -224,7 +195,7 @@
     .item {
       padding: 22px;
       border: 1px solid var(--line);
-      border-radius: 8px;
+      border-radius: 4px;
       background: var(--surface);
     }
 
@@ -238,7 +209,7 @@
       margin: 7px 0 0;
       color: var(--warm);
       font-size: 0.92rem;
-      font-weight: 700;
+      font-weight: 600;
     }
 
     .item p {
@@ -291,7 +262,7 @@
       gap: 18px;
       padding: 30px;
       border: 1px solid var(--line);
-      border-radius: 8px;
+      border-radius: 4px;
       background: var(--surface-soft);
     }
 
@@ -300,7 +271,7 @@
       margin: 0;
       color: #3f494b;
       font-family: Georgia, "Times New Roman", serif;
-      font-size: clamp(1.16rem, 2vw, 1.55rem);
+      font-size: 1.12rem;
       line-height: 1.55;
     }
 
@@ -330,7 +301,6 @@
         max-width: 260px;
       }
 
-      .quick-facts,
       .research-grid,
       .work-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -359,7 +329,6 @@
         padding-top: 24px;
       }
 
-      .quick-facts,
       .research-grid,
       .work-grid,
       .publication,
@@ -393,12 +362,12 @@
 
     <header class="hero">
       <div>
-        <p class="eyebrow">Computer Vision · Brain-inspired Intelligence · Research Systems</p>
-        <h1>Building visual intelligence systems that stay close to real data.</h1>
+        <p class="eyebrow">Jiayi Li · Undergraduate Researcher</p>
+        <h1>真正的、统一的智能</h1>
         <p class="lead">
-          I am an undergraduate researcher in Software Engineering at Beijing University of Technology.
-          My work spans computer vision, multimodal learning, medical imaging, agricultural vision,
-          brain-inspired intelligence, embodied intelligence, and AR/XR interaction.
+          My long-term direction is true, unified intelligence. I currently approach this question through
+          computer vision, multimodal learning, brain-inspired intelligence, embodied intelligence, and
+          research systems that connect models with real experimental workflows.
         </p>
         <div class="hero-actions">
           <a class="button primary" href="mailto:lijiayi12jad@gmail.com">Email Me</a>
@@ -414,34 +383,14 @@
       </div>
     </header>
 
-    <div class="quick-facts" aria-label="Profile highlights">
-      <div class="fact">
-        <strong>2</strong>
-        <span>accepted first-author research papers</span>
-      </div>
-      <div class="fact">
-        <strong>CV</strong>
-        <span>computer vision, segmentation, and visual grounding</span>
-      </div>
-      <div class="fact">
-        <strong>EEG</strong>
-        <span>multimodal localization with cognitive signals</span>
-      </div>
-      <div class="fact">
-        <strong>BI</strong>
-        <span>brain-inspired intelligence and unified intelligent systems</span>
-      </div>
-    </div>
-
     <section id="research">
       <div class="section-head">
         <h2>Research Direction</h2>
         <p class="section-intro">
-          I am interested in vision problems where the data is not clean, centered, or neatly labeled:
-          occluded field images, anisotropic medical volumes, EEG-guided perception, and real-time
-          interaction systems. A long-term motivation behind these directions is the pursuit of
-          true, unified intelligence: systems that can integrate perception, cognition, action, and
-          learning rather than solving isolated pattern-recognition tasks.
+          I am interested in intelligence as an integrated capability: perception, cognition, action,
+          learning, and adaptation should eventually be understood within one coherent framework.
+          My current work uses computer vision and multimodal learning as concrete entry points toward
+          this broader question.
         </p>
       </div>
       <div class="research-grid">
@@ -449,9 +398,8 @@
           <h3>Instance Segmentation Under Occlusion</h3>
           <p class="meta">Agricultural vision · dataset construction</p>
           <p>
-            First-person maize segmentation pushed me toward instance ownership, ignore regions,
-            and annotation tools that can handle disconnected visible parts instead of assuming one
-            clean object mask.
+            My work on first-person maize instance segmentation focuses on benchmark construction,
+            annotation protocols, instance ownership, and model evaluation for agricultural vision.
           </p>
         </article>
         <article class="item">
@@ -459,15 +407,15 @@
           <p class="meta">CT markers · lesion segmentation · 3D geometry</p>
           <p>
             My medical imaging work combines practical detection pipelines, point-cloud visualization,
-            and segmentation-model comparison under limited and irregular clinical data.
+            and segmentation-model comparison for CT analysis and lesion segmentation.
           </p>
         </article>
         <article class="item">
           <h3>Multimodal Visual Grounding</h3>
           <p class="meta">EEG · object regions · long-sequence signals</p>
           <p>
-            I am exploring whether noisy, low-bandwidth EEG signals can provide useful cognitive cues
-            for region-level visual localization beyond ordinary classification.
+            I am exploring EEG-guided visual localization as a multimodal grounding problem that links
+            cognitive signals with object-level visual regions.
           </p>
         </article>
         <article class="item">
@@ -485,7 +433,7 @@
       <div class="section-head">
         <h2>Publications</h2>
         <p class="section-intro">
-          Recent work focuses on benchmarks and robust perception pipelines for difficult real-world data.
+          Selected publications and accepted work.
         </p>
       </div>
       <div class="publication-list">
@@ -510,8 +458,7 @@
       <div class="section-head">
         <h2>Selected Work</h2>
         <p class="section-intro">
-          I like building research infrastructure around hard annotation and perception problems:
-          not only models, but also datasets, tools, validation protocols, and reproducible pipelines.
+          Selected research and engineering work.
         </p>
       </div>
       <div class="work-grid">
@@ -554,7 +501,7 @@
       <div class="section-head">
         <h2>Experience</h2>
         <p class="section-intro">
-          Research and engineering experiences that shaped my current direction.
+          Research and engineering experiences.
         </p>
       </div>
       <div class="timeline">
@@ -591,9 +538,9 @@
       </div>
       <div class="ideas">
         <p>
-          My ideal is true, unified intelligence. I am interested in systems that do more than
-          optimize a narrow benchmark: systems that can perceive, reason, learn, act, and adapt as
-          parts of the same whole. This is why brain-inspired intelligence is one of my core interests.
+          My ideal is true, unified intelligence. I am interested in systems that can integrate
+          perception, reasoning, learning, action, and adaptation as parts of the same whole.
+          This is why brain-inspired intelligence is one of my core interests.
         </p>
         <div class="idea-note">
           This space will keep evolving as my research questions become sharper.
